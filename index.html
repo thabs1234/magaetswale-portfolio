@@ -25,7 +25,7 @@
         
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--rich-black');
+            background: var(--rich-black);
             color: var(--diamond-white);
             overflow-x: hidden;
             line-height: 1.6;
@@ -53,9 +53,14 @@
             gap: 12px;
         }
         
-        .logo {
+        .logo-image {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
@@ -352,6 +357,54 @@
             background: rgba(0, 255, 157, 0.95);
         }
         
+        /* Logo Gallery Section */
+        .logo-gallery {
+            background: var(--deep-charcoal);
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-item {
+            background: var(--deep-charcoal);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border-color: rgba(239, 71, 111, 0.3);
+        }
+        
+        .logo-item img {
+            max-height: 120px;
+            width: auto;
+            margin: 0 auto 24px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        }
+        
+        .logo-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--diamond-white);
+            margin-bottom: 12px;
+        }
+        
+        .logo-item p {
+            color: var(--warm-gray);
+            font-weight: 300;
+            font-size: 14px;
+        }
+        
         /* Premium Pricing */
         .pricing {
             background: linear-gradient(to right, #111 0%, #0A0A0A 100%);
@@ -612,14 +665,14 @@
     <!-- Premium Navigation -->
     <nav>
         <div class="logo-container">
-            <div class="logo">MS Magaetswale<span class="logo-span">.</span></div>
+            <img src="logo_80b50e.jpg" alt="Magaetswale Solutions Logo" class="logo-image">
+            <div class="logo-text">MS Magaetswale<span class="logo-span">.</span></div>
         </div>
         <ul>
             <li><a href="#services">Services</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#logos">Branding</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#testimonials">Clients</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -662,24 +715,44 @@
         </div>
     </section>
 
-    <!-- Premium Gallery - Before/After -->
+    <!-- Premium Gallery -->
     <section class="gallery" id="gallery">
         <div class="section-title">
             <h2>Cleaning <span>Gallery</span></h2>
-            <p>Real results from before to after - see the transformation</p>
+            <p>Inside our workspace and professional service photos</p>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item fade-in">
-                <img src="C:/Users/Thabang/AppData/Roaming/Hermes/composer-images/video1_frame_001_6a24ee.jpg" alt="Couch Deep Cleaning Before">
-                <div class="label">Before Cleaning</div>
+                <img src="WhatsApp_Image_2026-09-14_at_16.13.57_6698b9.jpg" alt="Couch deep cleaning service with before/after results">
+                <div class="label">Couch Cleaning Flyer</div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="C:/Users/Thabang/AppData/Roaming/Hermes/composer-images/video1_frame_002_7592cc.jpg" alt="Couch Deep Cleaning After">
-                <div class="label after">After Cleaning</div>
+                <img src="WhatsApp_Image_2026-09-09_at_11.39.26_5f26e3.jpg" alt="Carpet cleaning flyer with pricing from R100-R500">
+                <div class="label">Carpet Cleaning Flyer</div>
             </div>
             <div class="gallery-item fade-in">
-                <img src="C:/Users/Thabang/AppData/Roaming/Hermes/composer-images/WhatsApp_Image_2026-09-09_at_11.39.26_5f26e3.jpg" alt="Carpet Cleaning Service">
-                <div class="label">Service in Action</div>
+                <img src="WhatsApp_Image_2026-09-10_at_08.25.28_26bb9c.jpg" alt="Professional interior cleaning showcase with brown sectional sofa">
+                <div class="label">Workspace Interior</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Logos Gallery -->
+    <section class="logo-gallery" id="logos">
+        <div class="section-title">
+            <h2>Brand <span>Assets</span></h2>
+            <p>Official logos and branding materials</p>
+        </div>
+        <div class="logo-grid">
+            <div class="logo-item fade-in">
+                <img src="logo_80b50e.jpg" alt="Magaetswale Solutions Logo 1">
+                <h3>Main Logo</h3>
+                <p>Official brand identity</p>
+            </div>
+            <div class="logo-item fade-in">
+                <img src="logo_e855d3.jpg" alt="Magaetswale Solutions Logo 2">
+                <h3>Alternate Logo</h3>
+                <p>Fallback brand identity</p>
             </div>
         </div>
     </section>
@@ -720,79 +793,6 @@
                 <h3>Standard Rug</h3>
                 <div class="amount">R200</div>
                 <p>Professional carpet cleaning</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Process -->
-    <section class="process" id="process">
-        <div class="section-title">
-            <h2>Cleaning <span>Process</span></h2>
-            <p>Premium process, proven results</p>
-        </div>
-        <div class="process-grid">
-            <div class="process-step fade-in">
-                <div class="num">01</div>
-                <h4>Book Now</h4>
-                <p>Contact us via WhatsApp or phone to schedule your cleaning appointment at your convenience.</p>
-            </div>
-            <div class="process-step fade-in">
-                <div class="num">02</div>
-                <h4>Prep Service</h4>
-                <p>Our technician arrives with professional-grade equipment and steam cleaning technology. Safe and eco-friendly.</p>
-            </div>
-            <div class="process-step fade-in">
-                <div class="num">03</div>
-                <h4>Deep Clean</h4>
-                <p>We extract deep dirt, allergens, and stains using professional extraction methods. Multiple passes ensure thorough clean.</p>
-            </div>
-            <div class="process-step fade-in">
-                <div class="num">04</div>
-                <h4>Enjoy</h4>
-                <p>Your spaces are dried and ready to use. We provide a fresh smell guarantee and satisfaction promise.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="section-title">
-            <h2>Client <span>Stories</span></h2>
-            <p>Trusted by Soweto and Johannesburg households</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card fade-in">
-                <div class="stars">★★★★★</div>
-                <p>"Finally, a cleaning service that understands local needs! Our 3-seater couch looked brand new after cleaning. Highly recommend!"</p>
-                <div class="author">
-                    <div class="avatar">T</div>
-                    <div>
-                        <div class="author-name">Thabo M.</div>
-                        <div class="author-loc">Soweto</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card fade-in">
-                <div class="stars">★★★★★</div>
-                <p>"Professionalism from start to finish. The carpet cleaning was thorough, the equipment was impressive, and they came to our home."</p>
-                <div class="author">
-                    <div class="avatar">M</div>
-                    <div>
-                        <div class="author-name">Motlha M.</div>
-                        <div class="author-loc">Johannesburg</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card fade-in">
-                <div class="stars">★★★★★</div>
-                <p>"The best cleaning experience I've had! They removed tough stains I thought were permanent. Free from allergens now!"</p>
-                <div class="author">
-                    <div class="avatar">L</div>
-                    <div>
-                        <div class="author-name">Lerato N.</div>
-                        <div class="author-loc">Pretoria</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
