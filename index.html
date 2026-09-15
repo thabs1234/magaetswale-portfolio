@@ -1,878 +1,475 @@
+<!-- site deployed 2026-09-15T05:58:07.858440Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Magaetswale Solutions - Premium Carpet & Couch Deep Cleaning Services in Soweto, Johannesburg">
-    <title>Magaetswale Solutions | Carpet & Couch Cleaning</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --inkling-red: #EF476F;
-            --premium-gold: #FFD700;
-            --deep-charcoal: #0A0A0A;
-            --rich-black: #000000;
-            --diamond-white: #F8F9FA;
-            --platinum: #E5E5E5;
-            --warm-gray: #A8A8A8;
-            --emerald-green: #00FF9D;
-            --gradient-primary: linear-gradient(135deg, #EF476F 0%, #FFD700 50%, #00FF9D 100%);
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--rich-black);
-            color: var(--diamond-white);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        
-        /* Premium Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            backdrop-filter: blur(20px);
-            background: rgba(10, 10, 10, 0.85);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 18px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .logo-image {
-            height: 40px;
-            width: auto;
-        }
-        
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 900;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 1px;
-        }
-        
-        .logo-span {
-            color: var(--platinum);
-        }
-        
-        nav ul {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-        
-        nav a {
-            color: var(--warm-gray);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: var(--diamond-white);
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--premium-gold);
-            transition: width 0.3s;
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
-        /* Premium Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 30px;
-            position: relative;
-            overflow: hidden;
-            background: 
-                linear-gradient(135deg, #0A0A0A 0%, #111 100%),
-                radial-gradient(ellipse at top left, rgba(239, 71, 111, 0.08) 0%, transparent 40%),
-                radial-gradient(ellipse at bottom right, rgba(0, 255, 157, 0.03) 0%, transparent 40%);
-        }
-        
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(48px, 8vw, 96px);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            color: var(--warm-gray);
-            max-width: 700px;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        
-        .btn-new {
-            display: inline-block;
-            padding: 18px 48px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary-new {
-            background: var(--gradient-primary);
-            color: var(--rich-black);
-            box-shadow: 0 10px 40px rgba(239, 71, 111, 0.3);
-        }
-        
-        .btn-primary-new:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(239, 71, 111, 0.5);
-        }
-        
-        .btn-primary-new::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn-primary-new:hover::before {
-            left: 100%;
-        }
-        
-        /* Premium Sections */
-        section {
-            padding: 160px 60px;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .section-title h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 56px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .section-title h2 span {
-            color: var(--platinum);
-        }
-        
-        .section-title p {
-            font-size: 20px;
-            color: var(--warm-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-        
-        /* Premium Services */
-        .services {
-            background: linear-gradient(to right, #111 0%, #0A0A0A 100%);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .service-card-new {
-            background: var(--deep-charcoal);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 50px 40px;
-            transition: all 0.5s;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-        
-        .service-card-new::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .service-card-new:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-            border-color: rgba(239, 71, 111, 0.3);
-        }
-        
-        .service-card-new:hover::before {
-            opacity: 1;
-        }
-        
-        .service-card-new .icon {
-            font-size: 56px;
-            margin-bottom: 28px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .service-card-new h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--diamond-white);
-        }
-        
-        .service-card-new p {
-            color: var(--warm-gray);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-        
-        .service-card-new .price {
-            color: var(--emerald-green);
-            font-weight: 800;
-            font-size: 20px;
-        }
-        
-        /* Premium Gallery */
-        .gallery {
-            background: var(--deep-charcoal);
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 32px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .gallery-item {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            background: var(--deep-charcoal);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-        
-        .gallery-item .label {
-            position: absolute;
-            bottom: 24px;
-            left: 24px;
-            background: rgba(239, 71, 111, 0.9);
-            color: var(--rich-black);
-            padding: 10px 24px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .gallery-item .label.after {
-            background: rgba(0, 255, 157, 0.95);
-        }
-        
-        /* Logo Gallery Section */
-        .logo-gallery {
-            background: var(--deep-charcoal);
-        }
-        
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo-item {
-            background: var(--deep-charcoal);
-            border-radius: 24px;
-            padding: 40px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s;
-        }
-        
-        .logo-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-            border-color: rgba(239, 71, 111, 0.3);
-        }
-        
-        .logo-item img {
-            max-height: 120px;
-            width: auto;
-            margin: 0 auto 24px;
-            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-        }
-        
-        .logo-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            color: var(--diamond-white);
-            margin-bottom: 12px;
-        }
-        
-        .logo-item p {
-            color: var(--warm-gray);
-            font-weight: 300;
-            font-size: 14px;
-        }
-        
-        /* Premium Pricing */
-        .pricing {
-            background: linear-gradient(to right, #111 0%, #0A0A0A 100%);
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .price-card {
-            background: var(--deep-charcoal);
-            border-radius: 24px;
-            padding: 50px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s;
-        }
-        
-        .price-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(239, 71, 111, 0.3);
-            border-color: rgba(239, 71, 111, 0.3);
-        }
-        
-        .price-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--diamond-white);
-        }
-        
-        .price-card .amount {
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--premium-gold);
-            margin-bottom: 16px;
-        }
-        
-        .price-card p {
-            color: var(--warm-gray);
-            font-weight: 300;
-            margin-bottom: 24px;
-        }
-        
-        /* Premium Contact */
-        .contact {
-            background: linear-gradient(to right, #111 0%, #0A0A0A 100%);
-        }
-        
-        .contact-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .social-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 48px;
-        }
-        
-        .social-tab-new {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 16px 28px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--diamond-white);
-            font-weight: 600;
-            transition: all 0.4s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 15px;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .social-tab-new:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-        
-        .social-tab-new::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .social-tab-new:hover::before {
-            left: 100%;
-        }
-        
-        .social-tab-new.whatsapp {
-            background: rgba(37, 211, 102, 0.12);
-            border-color: rgba(37, 211, 102, 0.3);
-        }
-        
-        .social-tab-new.whatsapp:hover {
-            background: #25D366;
-            color: var(--rich-black);
-        }
-        
-        .social-tab-new.tiktok {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .social-tab-new.tiktok:hover {
-            background: #010101;
-            border-color: #FF0050;
-        }
-        
-        .social-tab-new.facebook {
-            background: rgba(24, 119, 242, 0.12);
-            border-color: rgba(24, 119, 242, 0.3);
-        }
-        
-        .social-tab-new.facebook:hover {
-            background: #1877F2;
-            color: var(--rich-black);
-        }
-        
-        .social-tab-new.email {
-            background: rgba(234, 67, 53, 0.12);
-            border-color: rgba(234, 67, 53, 0.3);
-        }
-        
-        .social-tab-new.email:hover {
-            background: #EA4335;
-            color: var(--rich-black);
-        }
-        
-        .social-tab-new svg {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-        }
-        
-        /* Premium Map */
-        .map-section {
-            background: var(--deep-charcoal);
-            padding: 120px 60px 80px;
-        }
-        
-        .map-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-        
-        .map-frame {
-            width: 100%;
-            height: 450px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-        
-        .map-frame iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .map-info {
-            text-align: center;
-            margin-top: 24px;
-            color: var(--warm-gray);
-            font-size: 15px;
-        }
-        
-        /* Premium Footer */
-        footer {
-            background: var(--deep-charcoal);
-            padding: 50px 60px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        footer p {
-            color: var(--warm-gray);
-            font-size: 15px;
-        }
-        
-        footer .portfolio-link {
-            color: var(--premium-gold);
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-        
-        footer .portfolio-link:hover {
-            color: var(--diamond-white);
-        }
-        
-        /* Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 14px 20px;
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                gap: 25px;
-            }
-            
-            section {
-                padding: 80px 20px;
-            }
-            
-            .hero h1 {
-                font-size: 48px;
-            }
-            
-            .section-title h2 {
-                font-size: 42px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 16px;
-            }
-        }
-        
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magaetswale Solutions — Clean Spaces. Better Places. Happier Faces.</title>
+<meta name="description" content="Professional carpet and couch deep cleaning in Soweto, Johannesburg. We come to you — you relax, we clean. Book via WhatsApp +27 60 300 9963.">
+<link rel="canonical" href="https://thabs1234.github.io/magaetswale-solutions-cleaningservices/">
+<style>
+  :root{
+    --bg:#f5f5f7;
+    --card:#ffffff;
+    --ink:#1d1d1f;
+    --muted:#6e6e73;
+    --accent:#b11226;
+    --accent-2:#a0a0a0;
+    --silver:#c0c0c0;
+    --line:#d2d2d7;
+    --shadow:0 2px 12px rgba(0,0,0,.05), 0 0 0 1px rgba(0,0,0,.02);
+    --shadow-soft:0 8px 30px rgba(0,0,0,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:-apple-system,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  body{min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%;height:auto}
+
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,245,247,.82);
+    backdrop-filter:saturate(180%) blur(16px);
+    -webkit-backdrop-filter:saturate(180%) blur(16px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1200px;margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em}
+  .brand-logo{
+    width:34px;height:34px;border-radius:9px;
+    background:linear-gradient(145deg,#e8e8ea,#9a9a9e);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.6);
+  }
+  .brand-logo svg{width:20px;height:20px}
+  .brand-name{font-size:15px}
+  .brand-name b{color:var(--accent)}
+  .nav-links{display:flex;align-items:center;gap:6px}
+  .nav-links a{
+    font-size:14px;padding:8px 12px;border-radius:10px;color:var(--muted);
+    transition:color .2s,background .2s;
+  }
+  .nav-links a:hover{color:var(--ink);background:rgba(0,0,0,.04)}
+  .nav-cta{
+    background:var(--accent);color:#fff!important;padding:8px 14px!important;
+    border-radius:10px;font-weight:600!important;
+  }
+  .nav-cta:hover{background:#8a0e1d}
+
+  .hero{
+    max-width:1200px;margin:0 auto;padding:64px 24px 40px;
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+  }
+  @media(max-width:880px){.hero{grid-template-columns:1fr;padding:36px 20px 24px;gap:24px}}
+  .hero-text h1{
+    font-size:clamp(34px,5vw,56px);font-weight:700;letter-spacing:-.02em;
+    line-height:1.06;margin-bottom:18px;
+  }
+  .hero-text h1 span{color:var(--accent)}
+  .hero-text p.lead{font-size:18px;color:var(--muted);line-height:1.5;margin-bottom:28px;max-width:42ch}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+  .tag{
+    background:#fff;border:1px solid var(--line);border-radius:100px;
+    padding:6px 12px;font-size:13px;color:var(--ink);display:inline-flex;align-items:center;gap:6px;
+    box-shadow:var(--shadow);
+  }
+  .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 20px;border-radius:12px;font-size:15px;font-weight:600;
+    border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-soft)}
+  .btn-primary:hover{background:#8a0e1d}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .btn-ghost:hover{background:#fafafa}
+  .btn svg{width:16px;height:16px}
+
+  .hero-visual{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    background:#fff;box-shadow:var(--shadow-soft);
+  }
+  .hero-visual img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .hero-visual .badge{
+    position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);padding:8px 12px;border-radius:10px;font-size:12px;
+    border:1px solid rgba(0,0,0,.06);display:flex;align-items:center;gap:6px;
+  }
+  .hero-visual .badge svg{width:14px;height:14px}
+
+  .section{max-width:1200px;margin:0 auto;padding:56px 24px}
+  @media(max-width:880px){.section{padding:36px 20px}}
+  .section-label{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    font-weight:600;margin-bottom:10px;
+  }
+  .section-title{font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+  .section-sub{color:var(--muted);font-size:16px;max-width:52ch;line-height:1.55;margin-bottom:36px}
+
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .service-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s,border-color .2s;
+  }
+  .service-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft);border-color:#e0e0e5}
+  .service-card .icon{
+    width:44px;height:44px;border-radius:12px;background:#f5f5f7;
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .service-card .icon svg{width:22px;height:22px;color:var(--accent)}
+  .service-card h3{font-size:18px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+  .service-card p{color:var(--muted);font-size:14px;line-height:1.5}
+  .service-card .price{margin-top:12px;font-size:13px;color:var(--accent);font-weight:600}
+
+  .prices{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 40px}
+  .prices-inner{max-width:900px;margin:0 auto;padding:40px 24px}
+  .price-table{width:100%;border-collapse:collapse;font-size:15px}
+  .price-table th,.price-table td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+  .price-table th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .price-table td:last-child{font-weight:600;color:var(--ink);white-space:nowrap}
+  .price-table tbody tr{transition:background .15s}
+  .price-table tbody tr:hover{background:#fafafa}
+
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .why-item{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;
+    display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow);
+  }
+  .why-item svg{width:20px;height:20px;color:var(--accent);flex-shrink:0;margin-top:2px}
+  .why-item h4{font-size:15px;font-weight:600;margin-bottom:4px}
+  .why-item p{font-size:13px;color:var(--muted);line-height:1.45}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
+  .gallery-item{
+    border-radius:var(--radius);overflow:hidden;background:#fff;
+    border:1px solid var(--line);box-shadow:var(--shadow);aspect-ratio:4/3;
+  }
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+  .gallery-item:hover img{transform:scale(1.03)}
+  .gallery-caption{padding:10px 12px;font-size:13px;color:var(--muted);background:#fff;border:1px solid var(--line);border-top:none}
+
+  .contact{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-soft)}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+  .contact-item{display:flex;gap:12px;align-items:flex-start}
+  .contact-item .ic{
+    width:38px;height:38px;border-radius:10px;background:#f5f5f7;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-item .ic svg{width:18px;height:18px;color:var(--accent)}
+  .brand-img{display:block;width:36px;height:36px;border-radius:9px;object-fit:contain;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .brand-fallback{display:none;width:36px;height:36px;border-radius:9px;background:linear-gradient(145deg,#e8e8ea,#9a9a9e);align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+  .brand-fallback svg{width:20px;height:20px}
+  .contact-item h4{font-size:14px;font-weight:600;margin-bottom:2px}
+  .contact-item p{font-size:14px;color:var(--muted);line-height:1.4}
+  .contact-item a.clickable{
+    font-weight:600;color:var(--accent);cursor:pointer;
+  }
+  .contact-item a.clickable:hover{text-decoration:underline}
+
+  .map-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:24px}
+  .map-wrap iframe{width:100%;height:360px;border:0;display:block}
+
+  .social-bar{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:18px;background:#fff;border-top:1px solid var(--line);
+  }
+  .social-bar a{
+    width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:#f5f5f7;border:1px solid var(--line);transition:background .2s,transform .15s;
+  }
+  .social-bar a:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+  .social-bar a:hover svg{color:#fff!important}
+  .social-bar a svg{width:18px;height:18px;color:var(--muted);transition:color .2s}
+
+  footer{
+    text-align:center;padding:24px;font-size:12px;color:var(--muted);
+    border-top:1px solid var(--line);background:var(--bg);
+  }
+  footer .slogan{font-size:13px;color:var(--ink);font-weight:500;margin-bottom:4px;letter-spacing:.01em}
+  footer .tagline{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+
+  .toast{
+    position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+    background:var(--ink);color:#fff;padding:10px 18px;border-radius:100px;
+    font-size:13px;box-shadow:var(--shadow-soft);opacity:0;transition:opacity .25s,transform .25s;
+    pointer-events:none;z-index:100;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  @media(max-width:600px){
+    .nav-links{display:none}
+    .hero-cta{flex-direction:column}
+    .btn{width:100%}
+  }
+</style>
 </head>
 <body>
-    <!-- Premium Navigation -->
-    <nav>
-        <div class="logo-container">
-            <img src="logo_80b50e.jpg" alt="Magaetswale Solutions Logo" class="logo-image" style="height:160px; width:auto;">
-            <div class="logo-text">MS Magaetswale<span class="logo-span">.</span></div>
-        </div>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#logos">Branding</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Premium Hero -->
-    <section class="hero">
-        <h1>Premium <br>Cleaning Services</h1>
-        <p class="fade-in">Deep cleaning solutions for carpets, couches, and upholstery. Steam cleaning technology with before/after results guaranteed.</p>
-        <div class="hero-buttons">
-            <a href="#pricing" class="btn btn-primary-new">See Pricing</a>
-            <a href="#contact" class="btn btn-outline-new">Book Now</a>
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-logo" aria-label="Magaetswale Solutions logo">
+        <img src="logo_06ed84.jpg" alt="Magaetswale Solutions logo" class="brand-img" id="brandImg" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex'">
+        <div class="brand-fallback" id="brandFallback">
+          <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px"><path d="M5 6 L5 18 L7.5 14 L10 18 L10 6 L13 6 L13 18 L16 18 L16 10 L12 10 L12 6 L16 6 L16 4 L5 4 L5 6 Z" fill="#b11226"/><path d="M15.5 8 C16.3 7.5 16.6 8.2 16.7 9 L16.7 15 C16.6 15.7 15.8 16.1 14.9 16.2 L13.5 16.2 C12.7 16.2 11 15.5 11 14.2 L11 11.5 C13.5 11.5 15.2 12.2 15.5 15 L15.5 8 Z" fill="#6e6e73"/></svg>
         </div>
-    </section>
+      </div>
+      <div class="brand-name">Magaetswale <b>Solutions</b></div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#prices">Prices</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://wa.me/27603009963" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- Premium Services -->
-    <section class="services" id="services">
-        <div class="section-title">
-            <h2>Our <span>Services</span></h2>
-            <p>Premium cleaning solutions with professional-grade equipment and steam technology</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card-new fade-in">
-                <div class="icon">🪑</div>
-                <h3>Couch Deep Cleaning</h3>
-                <p>Restoring your couches to pristine condition. Removes stains, allergens, and deep dirt with our professional steam extraction.</p>
-                <div class="price">From R270</div>
-            </div>
-            <div class="service-card-new fade-in">
-                <div class="icon">🧶</div>
-                <h3>Carpet Cleaning</h3>
-                <p>Deep carpet cleaning that removes 99% of dirt, dust, and allergens. Gives your floors a fresh, clean, and brand new look!</p>
-                <div class="price">From R200</div>
-            </div>
-            <div class="service-card-new fade-in">
-                <div class="icon">🛋️</div>
-                <h3>Office & Commercial</h3>
-                <p>Professional office carpet cleaning at R35 per square meter. Safe and eco-friendly steam cleaning for your workplace.</p>
-                <div class="price">R35/sqm</div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Clean Spaces.<br><span>Better Places.</span><br>Happier Faces.</h1>
+    <p class="lead">Professional carpet and couch deep cleaning across Soweto and greater Johannesburg. We come to you — you relax, we clean.</p>
+    <div class="hero-meta">
+      <span class="tag"><span class="dot"></span>Carpet Cleaning</span>
+      <span class="tag"><span class="dot"></span>Couch Deep Cleaning</span>
+      <span class="tag"><span class="dot"></span>Steam Technology</span>
+      <span class="tag"><span class="dot"></span>Eco-Friendly</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://wa.me/27603009963" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.42 10.58c-.01-.04-.02-.07-.04-.11-.24-.47-.68-.9-1.29-1.29-.04-.02-.07-.03-.11-.04C14.5 8.86 13.9 8.5 13.1 8.2c.11-.98.11-1.97 0-2.95-.01-.04-.03-.07-.04-.11-.26-.42-.62-.78-1.08-1.08-.04-.01-.07-.03-.11-.04C11.5 2.86 11.1 2.5 10.6 2.22c-.47-.26-1.03-.24-1.51.04-.01 0-.03.01-.04.01-.04.01-.07.03-.11.04-.42.26-.78.62-1.08 1.08-.01.02-.03.03-.04.05-.01.04-.03.07-.04.11-.13.98-.13 1.97 0 2.95-.01.01-.03.02-.04.02-.11.09-.24.11-.37.11H5.14c-.12 0-.26-.02-.37-.11-.01-.01-.02-.02-.04-.02.13-.98.13-1.97 0-2.95-.04-.04-.07-.05-.11-.04-.04-.03-.05-.04-.05-.05-.48-.28-1.04-.3-1.51-.04-.07.02-.11.05-.16.08-.01 0-.02.01-.03.01-.04.03-.07.05-.11.08-.24.14-.48.14-.72 0-.01 0-.03-.02-.04-.03-.02-.03-.03-.04-.05-.05-.2-.08-.38-.08-.58 0-.01 0-.02.01-.03.01-.1 0-.19-.01-.29-.03-.08-.02-.16-.05-.24-.09-.04-.03-.08-.06-.13-.09-.04-.03-.07-.07-.11-.11-.28-.34-.46-.8-.46-1.32 0-.52.18-1 .46-1.32.04-.04.08-.08.13-.11.08-.06.14-.12.2-.19.04-.03.08-.05.12-.09.04-.02.07-.05.11-.07.05-.02.1-.04.15-.06.14-.04.28-.06.42-.08.14-.02.28-.03.42-.04.07-.01.15-.01.22-.01h6.14c.07 0 .15.01.22.01.14.01.28.02.42.04.14.02.28.04.42.08.05.02.1.04.15.06.04.02.07.05.11.07.04.04.08.06.12.09.06.07.12.13.2.19.05.03.09.07.13.11.04.04.08.07.13.09.08.04.17.07.24.09.1.02.19.03.29.03.04 0 .07.01.1.03.04.02.08.04.11.08.04.04.06.08.08.12.02.04.03.08.03.12 0 .52-.18 1-.46 1.32-.04.03-.07.07-.11.11-.05.03-.09.06-.13.09-.08.04-.16.07-.24.09-.1.02-.19.03-.29.03-.04 0-.07-.01-.1-.03-.04-.02-.08-.04-.11-.08-.04-.03-.06-.07-.08-.11-.02-.04-.03-.08-.03-.12 0-.52.18-1 .46-1.32.28-.34.46-.8.46-1.32 0-.52-.18-1-.46-1.32-.01-.02-.03-.03-.05-.05-.04-.03-.07-.06-.11-.08-.04-.02-.08-.05-.12-.09-.05-.04-.11-.08-.16-.12-.01-.01-.02-.02-.03-.03-.01-.01-.02-.02-.03-.03-.57-.5-1.22-.5-1.8 0-.01.01-.02.02-.03.03-.01.01-.02.02-.03.03-.05.04-.1.08-.16.12-.04.04-.08.07-.12.09-.06.06-.12.12-.2.19-.05.03-.09.07-.13.11-.04.04-.08.07-.13.11-.08.04-.17.07-.24.09-.1.02-.19.03-.29.03-.04 0-.07-.01-.1-.03Z"/></svg>
+        Book via WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#services">View Services</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="https://images.unsplash.com/photo-1581733084273-7cc2d31e627a?auto=format&fit=crop&w=800&q=80" alt="Professional couch deep cleaning in progress" loading="eager">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Trusted in Soweto
+    </div>
+  </div>
+</section>
 
-    <!-- Premium Gallery -->
-    <section class="gallery" id="gallery">
-        <div class="section-title">
-            <h2>Cleaning <span>Gallery</span></h2>
-            <p>Inside our workspace and professional service photos</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item fade-in">
-                <img src="WhatsApp_Image_2026-09-14_at_16.13.57_6698b9.jpg" alt="Couch deep cleaning service with before/after results">
-                <div class="label">Couch Cleaning Flyer</div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="WhatsApp_Image_2026-09-09_at_11.39.26_5f26e3.jpg" alt="Carpet cleaning flyer with pricing from R100-R500">
-                <div class="label">Carpet Cleaning Flyer</div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="WhatsApp_Image_2026-09-10_at_08.25.28_26bb9c.jpg" alt="Professional interior cleaning showcase with brown sectional sofa">
-                <div class="label">Workspace Interior</div>
-            </div>
-        </div>
-    </section>
+<section class="section" id="services">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">Two Cleaning Services.<br>One Standard of Excellence.</h2>
+  <p class="section-sub">From wall-to-wall fitted carpets to beloved family couches — we restore freshness, remove stubborn stains, and leave every fibre breathing again.</p>
 
-    <!-- Brand Logos Gallery -->
-    <section class="logo-gallery" id="logos">
-        <div class="section-title">
-            <h2>Brand <span>Assets</span></h2>
-            <p>Official logos and branding materials</p>
-        </div>
-        <div class="logo-grid">
-            <div class="logo-item fade-in">
-                <img src="logo_80b50e.jpg" alt="Magaetswale Solutions Logo 1">
-                <h3>Main Logo</h3>
-                <p>Official brand identity</p>
-            </div>
-            <div class="logo-item fade-in">
-                <img src="logo_e855d3.jpg" alt="Magaetswale Solutions Logo 2">
-                <h3>Alternate Logo</h3>
-                <p>Fallback brand identity</p>
-            </div>
-        </div>
-    </section>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M3 6h9M12 6a6 6 0 0 1 0 12 6 6 0 0 1 0-12z"/></svg></div>
+      <h3>Carpet Cleaning</h3>
+      <p>Deep steam cleaning for rugs, fitted carpets, and office floors. Removes dirt, dust, and allergens — guaranteed fresh smell.</p>
+      <div class="price">From R200 · Office: R35/m²</div>
+    </div>
+    <div class="service-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="8" width="16" height="9" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/><path d="M10 17v2M14 17v2"/></svg></div>
+      <h3>Couch Deep Cleaning</h3>
+      <p>Extraction cleaning for all couch sizes — 1-seater to 7-seater, ottomans, and extra cushions. Before & after results you can see.</p>
+      <div class="price">From R270 · Ottomans R108</div>
+    </div>
+  </div>
+</section>
 
-    <!-- Premium Pricing -->
-    <section class="pricing" id="pricing">
-        <div class="section-title">
-            <h2>Service <span>Pricing</span></h2>
-            <p>Transparent pricing - book directly for your convenience</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="price-card fade-in">
-                <h3>1 Seater Couch</h3>
-                <div class="amount">R270</div>
-                <p>Deep steam cleaning with fresh scent</p>
-            </div>
-            <div class="price-card fade-in">
-                <h3>2 Seater Couch</h3>
-                <div class="amount">R360</div>
-                <p>Complete cleaning treatment</p>
-            </div>
-            <div class="price-card fade-in">
-                <h3>3 Seater Couch</h3>
-                <div class="amount">R450</div>
-                <p>Fully featured deep clean</p>
-            </div>
-            <div class="price-card fade-in">
-                <h3>4 Seater Couch</h3>
-                <div class="amount">R540</div>
-                <p>Premium treatment package</p>
-            </div>
-            <div class="price-card fade-in">
-                <h3>5 Seater Couch</h3>
-                <div class="amount">R630</div>
-                <p>Maximum coverage service</p>
-            </div>
-            <div class="price-card fade-in">
-                <h3>Standard Rug</h3>
-                <div class="amount">R200</div>
-                <p>Professional carpet cleaning</p>
-            </div>
-        </div>
-    </section>
+<div class="prices" id="prices">
+  <div class="prices-inner">
+    <div class="section-label">Our Prices</div>
+    <h2 class="section-title">Transparent Pricing</h2>
+    <p class="section-sub" style="margin-bottom:20px">Upfront rates. No hidden fees. We come to you.</p>
 
-    <!-- Premium Contact -->
-    <section class="contact" id="contact">
-        <div class="section-title">
-            <h2>Ready for <span>Premium Clean?</span></h2>
-            <p>Book your deep cleaning service today - we come to you!</p>
-        </div>
-        <div class="contact-container">
-            <div class="social-tabs fade-in">
-                <a href="https://wa.me/27603009963" class="social-tab-new whatsapp">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 3.204 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    <span>WhatsApp</span>
-                </a>
-                <a href="https://www.tiktok.com/@tshepomontshoni" class="social-tab-new tiktok" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .56.04.82.11V9.4a6.33 6.33 0 00-.82-.05A6.34 6.34 0 003.15 15.7a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.01a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.44z"/></svg>
-                    <span>TikTok</span>
-                </a>
-                <a href="https://www.facebook.com/tshepomontshoni" class="social-tab-new facebook" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    <span>Facebook</span>
-                </a>
-                <a href="https://www.instagram.com/tshepomontshoni" class="social-tab-new instagram" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    <span>Instagram</span>
-                </a>
-                <a href="mailto:info@magaetswalesolutions.co.za" class="social-tab-new email">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    <span>Email</span>
-                </a>
-            </div>
-        </div>
-    </section>
+    <table class="price-table">
+      <thead>
+        <tr><th>Carpet Cleaning</th><th>From</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Standard Rug</td><td>R200</td></tr>
+        <tr><td>Large Rug</td><td>R350</td></tr>
+        <tr><td>Fitted Carpet</td><td>R450</td></tr>
+        <tr><td>Office Carpet</td><td>R35 / m²</td></tr>
+      </tbody>
+    </table>
 
-    <!-- Map Section -->
-    <section class="map-section" id="location">
-        <div class="section-title fade-in" style="padding-top:100px;">
-            <h2>Find <span>Our Studio</span></h2>
-            <p>287 Tau Street, Diepkloof Ext Phase 1, Soweto, Johannesburg</p>
-        </div>
-        <div class="map-container fade-in">
-            <div class="map-frame">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.5!2d27.9618254!3d-26.2480841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950978ca92d591%3A0x9be2813144a15e64!2sTshepo%27s%20cleaning%20services%20and%20carwash!5e0!3m2!1sen!2sza!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <p class="map-info">
-                📍 GPS: -26.248°S, 27.962°E | Studio Location | Soweto, Johannesburg
-            </p>
-        </div>
-    </section>
+    <table class="price-table" style="margin-top:16px">
+      <thead>
+        <tr><th>Couch Deep Cleaning</th><th>From</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1 Seater</td><td>R270</td></tr>
+        <tr><td>2 Seater</td><td>R360</td></tr>
+        <tr><td>3 Seater</td><td>R450</td></tr>
+        <tr><td>4 Seater</td><td>R540</td></tr>
+        <tr><td>5 Seater</td><td>R630</td></tr>
+        <tr><td>6 Seater</td><td>R720</td></tr>
+        <tr><td>7 Seater</td><td>R810</td></tr>
+        <tr><td>Ottoman</td><td>R108 each</td></tr>
+        <tr><td>Sleeping Couch</td><td>R405</td></tr>
+        <tr><td>Extra Cushion</td><td>R18 each</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-    <!-- Premium Footer -->
-    <footer>
-        <p>© 2026 <strong>MS Magaetswale Solutions | Thabang Lehau | SiteCraft SA</strong>. Premium cleaning services for South African homes.</p>
-        <p style="margin-top:12px; color: var(--warm-gray);">
-            Portfolio by <a href="https://thabs1234.github.io/portfolio/" target="_blank" class="portfolio-link">Thabang Lehau</a> | <a href="https://thabs1234.github.io/portfolio/" target="_blank" class="portfolio-link">SiteCraft SA</a>
-        </p>
-    </footer>
+<section class="section">
+  <div class="section-label">Why Choose Us</div>
+  <h2 class="section-title">The Magaetswale Difference</h2>
+  <p class="section-sub">We don't just clean — we restore. Four reasons homeowners and businesses choose us.</p>
+  <div class="why">
+    <div class="why-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>
+      <div>
+        <h4>Removes Dirt, Dust & Allergens</h4>
+        <p>Deep extraction that lifts the build-up you can't see.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <div>
+        <h4>Steam Cleaning Technology</h4>
+        <p>Professional-grade steam extraction for a genuinely deep clean.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22c-4.97 0-9-2.686-9-6v-2c0-3.314 4.027-5 9-5s9 1.686 9 5v2c0 3.314-4.027 6-9 6z"/><path d="M12 10v8M10 12h4"/></svg>
+      <div>
+        <h4>Safe & Eco-Friendly</h4>
+        <p>Safe for families, pets, and the environment.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 7h-2M13 7a4 4 0 0 1 4 4v3a4 4 0 0 1-4 4h-2M7 7h2M5 7a4 4 0 0 0-4 4v3a4 4 0 0 0 4 4h2"/></svg>
+      <div>
+        <h4>Professional & Reliable</h4>
+        <p>On-time, courteous, and consistent — every visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Premium Scroll Reveal Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        
-        // Premium Cursor Effect
-        document.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.clientX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.clientY) / 25;
-            document.querySelectorAll('.wd-avatar').forEach(el => {
-                el.style.transform = `translateY(${yAxis}px)`;
-            });
-        });
-    </script>
+<section class="section" id="gallery">
+  <div class="section-label">Work We're Proud Of</div>
+  <h2 class="section-title">Before & After</h2>
+  <p class="section-sub">Real jobs in Soweto homes. Stains gone, fabrics refreshed, smiles returned.</p>
+  <div class="gallery">
+    <figure class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" alt="Living room carpet being deep cleaned" loading="lazy">
+      <figcaption class="gallery-caption">Carpet deep cleaning — fit for families</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1584139305528-5b3d28e07d6b?auto=format&fit=crop&w=600&q=80" alt="Couch before cleaning" loading="lazy">
+      <figcaption class="gallery-caption">Couch before — stained fabric</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1594899874463-3a8f0b8a1d0b?auto=format&fit=crop&w=600&q=80" alt="Couch after cleaning" loading="lazy">
+      <figcaption class="gallery-caption">Couch after — deep cleaned & restored</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1504639773-c0a4d228417b?auto=format&fit=crop&w=600&q=80" alt="Rug cleaning setup" loading="lazy">
+      <figcaption class="gallery-caption">Rug cleaning — standard & large</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Book Your Clean</h2>
+  <p class="section-sub">WhatsApp is fastest — send us a message and we'll confirm your slot within the hour.</p>
+
+  <div class="contact">
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.42 10.58c-.01-.04-.02-.07-.04-.11-.24-.47-.68-.9-1.29-1.29-.04-.02-.07-.03-.11-.04C14.5 8.86 13.9 8.5 13.1 8.2c.11-.98.11-1.97 0-2.95-.01-.04-.03-.07-.04-.11-.26-.42-.62-.78-1.08-1.08-.04-.01-.07-.03-.11-.04C11.5 2.86 11.1 2.5 10.6 2.22c-.47-.26-1.03-.24-1.51.04-.01 0-.03.01-.04.01-.04.01-.07.03-.11.04-.42.26-.78.62-1.08 1.08-.01.02-.03.03-.04.05-.01.04-.03.07-.04.11-.13.98-.13 1.97 0 2.95-.01.01-.03.02-.04.02-.11.09-.24.11-.37.11H5.14c-.12 0-.26-.02-.37-.11-.01-.01-.02-.02-.04-.02.13-.98.13-1.97 0-2.95-.04-.04-.07-.05-.11-.04-.04-.03-.05-.04-.05-.05-.48-.28-1.04-.3-1.51-.04-.07.02-.11.05-.16.08-.01 0-.02.01-.03.01-.04.03-.07.05-.11.08-.24.14-.48.14-.72 0-.01 0-.03-.02-.04-.03-.02-.03-.03-.04-.05-.05-.2-.08-.38-.08-.58 0-.01 0-.02.01-.03.01-.1 0-.19-.01-.29-.03-.08-.02-.16-.05-.24-.09-.04-.03-.08-.06-.13-.09-.04-.03-.07-.07-.11-.11-.28-.34-.46-.8-.46-1.32 0-.52.18-1 .46-1.32.04-.04.08-.08.13-.11.08-.06.14-.12.2-.19.04-.03.08-.05.12-.09.04-.02.07-.05.11-.07.05-.02.1-.04.15-.06.14-.04.28-.06.42-.08.14-.02.28-.03.42-.04.07-.01.15-.01.22-.01h6.14c.07 0 .15.01.22.01.14.01.28.02.42.04.14.02.28.04.42.08.05.02.1.04.15.06.04.02.07.05.11.07.04.04.08.06.12.09.06.07.12.13.2.19.05.03.09.07.13.11.04.04.08.07.13.09.08.04.17.07.24.09.1.02.19.03.29.03.04 0 .07.01.1.03.04.02.08.04.11.08.04.04.06.08.08.12.02.04.03.08.03.12 0 .52-.18 1-.46 1.32-.04.03-.07.07-.11.11-.05.03-.09.06-.13.09-.08.04-.16.07-.24.09-.1.02-.19.03-.29.03-.04 0-.07-.01-.1-.03-.04-.02-.08-.04-.11-.08-.04-.03-.06-.07-.08-.11-.02-.04-.03-.08-.03-.12 0-.52.18-1 .46-1.32.28-.34.46-.8.46-1.32 0-.52-.18-1-.46-1.32-.01-.02-.03-.03-.05-.05-.04-.03-.07-.06-.11-.08-.04-.02-.08-.05-.12-.09-.05-.04-.11-.08-.16-.12-.01-.01-.02-.02-.03-.03-.01-.01-.02-.02-.03-.03-.57-.5-1.22-.5-1.8 0-.01.01-.02.02-.03.03-.01.01-.02.02-.03.03-.05.04-.1.08-.16.12-.04.04-.08.07-.12.09-.06.06-.12.12-.2.19-.05.03-.09.07-.13.11-.04.04-.08.07-.13.11-.08.04-.17.07-.24.09-.1.02-.19.03-.29.03-.04 0-.07-.01-.1-.03Z"/></svg></div>
+        <div>
+          <h4>WhatsApp</h4>
+          <p><a class="clickable" href="https://wa.me/27603009963" target="_blank" rel="noopener" data-action="whatsapp">+27 60 300 9963</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 18 3M7 17l4-4 3 3 4-5"/></svg></div>
+        <div>
+          <h4>Email</h4>
+          <p><a class="clickable" href="mailto:info@magaetswalesolutions.co.za" data-action="email">info@magaetswalesolutions.co.za</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div>
+          <h4>Visit Us</h4>
+          <p>287 Tau Street<br>Diepkloof Ext Phase 1<br>Soweto, Johannesburg</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <p style="font-size:13px;color:var(--muted);margin:0 0 10px">
+        <a href="https://maps.app.goo.gl/mxaKpkWjgt6sYCWb8" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">
+          Open in Google Maps ↗
+        </a>
+        — Tshepo's Cleaning Services and Carwash, Soweto
+      </p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.8985325999997!2d27.9618254!3d-26.2480841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950978ca92d591%3A0x9be2813144a15e64!2sTshepo%27s%20Cleaning%20Services%20and%20Carwash!5e0!3m2!1sen!2szaf!4v1757900000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Magaetswale Solutions — Soweto location on Google Maps">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<div class="social-bar">
+  <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" data-action="social">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.304l-.531 3.47h-2.773v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram" data-action="social">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 0 1 17.63 16 4 4 0 0 1 12 16 4 4 0 0 1 10.37 11.37 4 4 0 0 1 16 8h1.5"/><circle cx="9" cy="17.5" r="1" fill="currentColor" stroke="none"/></svg>
+  </a>
+  <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok" data-action="social">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 1.586a7.71 7.71 0 0 0-10.99 0 7.71 7.71 0 0 0 0 10.99l3.88-3.88c.29-.29.29-.765 0-1.055l-3.88-3.88a7.71 7.71 0 0 0 0-10.99 7.71 7.71 0 0 0 10.99 0zM12 6.7c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 8a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+  </a>
+  <a href="https://wa.me/27603009963" target="_blank" rel="noopener" aria-label="WhatsApp" data-action="social" style="background:var(--accent);border-color:var(--accent)">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.42 10.58c-.01-.04-.02-.07-.04-.11-.24-.47-.68-.9-1.29-1.29-.04-.02-.07-.03-.11-.04C14.5 8.86 13.9 8.5 13.1 8.2c.11-.98.11-1.97 0-2.95-.01-.04-.03-.07-.04-.11-.26-.42-.62-.78-1.08-1.08-.04-.01-.07-.03-.11-.04C11.5 2.86 11.1 2.5 10.6 2.22c-.47-.26-1.03-.24-1.51.04-.01 0-.03.01-.04.01-.04.01-.07.03-.11.04-.42.26-.78.62-1.08 1.08-.01.02-.03.03-.04.05-.01.04-.03.07-.04.11-.13.98-.13 1.97 0 2.95-.01.01-.03.02-.04.02-.11.09-.24.11-.37.11H5.14c-.12 0-.26-.02-.37-.11-.01-.01-.02-.02-.04-.02.13-.98.13-1.97 0-2.95-.04-.04-.07-.05-.11-.04-.04-.03-.05-.04-.05-.05-.48-.28-1.04-.3-1.51-.04-.07.02-.11.05-.16.08-.01 0-.02.01-.03.01-.04.03-.07.05-.11.08-.24.14-.48.14-.72 0-.01 0-.03-.02-.04-.03-.02-.03-.03-.04-.05-.05-.2-.08-.38-.08-.58 0-.01 0-.02.01-.03.01-.1 0-.19-.01-.29-.03-.08-.02-.16-.05-.24-.09-.04-.03-.08-.06-.13-.09-.04-.03-.07-.07-.11-.11-.28-.34-.46-.8-.46-1.32 0-.52.18-1 .46-1.32.04-.04.08-.08.13-.11.08-.06.14-.12.2-.19.04-.03.08-.05.12-.09.04-.02.07-.05.11-.07.05-.02.1-.04.15-.06.14-.04.28-.06.42-.08.14-.02.28-.03.42-.04.07-.01.15-.01.22-.01h6.14c.07 0 .15.01.22.01.14.01.28.02.42.04.14.02.28.04.42.08.05.02.1.04.15.06.04.02.07.05.11.07.04.04.08.06.12.09.06.07.12.13.2.19.05.03.09.07.13.11.04.04.08.07.13.09.08.04.17.07.24.09.1.02.19.03.29.03.04 0 .07.01.1.03.04.02.08.04.11.08.04.04.06.08.08.12.02.04.03.08.03.12 0 .52-.18 1-.46 1.32-.04.03-.07.07-.11.11-.05.03-.09.06-.13.09-.08.04-.16.07-.24.09-.1.02-.19.03-.29.03-.04 0-.07-.01-.1-.03-.04-.02-.08-.04-.11-.08-.04-.03-.06-.07-.08-.11-.02-.04-.03-.08-.03-.12 0-.52.18-1 .46-1.32.28-.34.46-.8.46-1.32 0-.52-.18-1-.46-1.32-.01-.02-.03-.03-.05-.05-.04-.03-.07-.06-.11-.08-.04-.02-.08-.05-.12-.09-.05-.04-.11-.08-.16-.12-.01-.01-.02-.02-.03-.03-.01-.01-.02-.02-.03-.03-.57-.5-1.22-.5-1.8 0-.01.01-.02.02-.03.03-.01.01-.02.02-.03.03-.05.04-.1.08-.16.12-.04.04-.08.07-.12.09-.06.06-.12.12-.2.19-.05.03-.09.07-.13.11-.04.04-.08.07-.13.11-.08.04-.17.07-.24.09-.1.02-.19.03-.29.03-.04 0-.07-.01-.1-.03Z"/></svg>
+  </a>
+</div>
+
+<footer>
+  <div class="slogan">CLEAN SPACES. BETTER PLACES. HAPPIER FACES.</div>
+  <div class="tagline">WE COME TO YOU! YOU RELAX, WE CLEAN!</div>
+  <div style="margin-top:6px">© <span id="year"></span> Magaetswale Solutions Pty Ltd. All rights reserved.</div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>toast.classList.remove('show'), 2200);
+}
+document.querySelectorAll('[data-action]').forEach(el => {
+  el.addEventListener('click', e => {
+    const action = el.dataset.action;
+    if(action === 'whatsapp') showToast('Opening WhatsApp…');
+    else if(action === 'email') showToast('Opening your email app…');
+    else if(action === 'social'){
+      const label = el.getAttribute('aria-label') || 'Social';
+      showToast(`Opening ${label}…`);
+    }
+  });
+});
+</script>
 </body>
 </html>
