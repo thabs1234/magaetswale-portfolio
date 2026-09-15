@@ -161,6 +161,9 @@
     display:flex;align-items:center;justify-content:center;flex-shrink:0;
   }
   .contact-item .ic svg{width:18px;height:18px;color:var(--accent)}
+  .brand-img{display:block;width:36px;height:36px;border-radius:9px;object-fit:contain;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .brand-fallback{display:none;width:36px;height:36px;border-radius:9px;background:linear-gradient(145deg,#e8e8ea,#9a9a9e);align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+  .brand-fallback svg{width:20px;height:20px}
   .contact-item h4{font-size:14px;font-weight:600;margin-bottom:2px}
   .contact-item p{font-size:14px;color:var(--muted);line-height:1.4}
   .contact-item a.clickable{
@@ -187,7 +190,8 @@
     text-align:center;padding:24px;font-size:12px;color:var(--muted);
     border-top:1px solid var(--line);background:var(--bg);
   }
-  footer .slogan{font-size:13px;color:var(--ink);font-weight:500;margin-bottom:6px;letter-spacing:.01em}
+  footer .slogan{font-size:13px;color:var(--ink);font-weight:500;margin-bottom:4px;letter-spacing:.01em}
+  footer .tagline{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
 
   .toast{
     position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
@@ -210,13 +214,10 @@
   <div class="nav-inner">
     <div class="brand">
       <div class="brand-logo" aria-label="Magaetswale Solutions logo">
-        <svg viewBox="0 0 24 24" fill="none">
-          <rect x="1" y="1" width="22" height="22" rx="5" fill="#f0f0f2"/>
-          <path d="M5 6 L5 18 L7.5 14 L10 18 L10 6 L13 6 L13 18 L16 18 L16 10 L12 10 L12 6 L16 6 L16 4 L5 4 L5 6 Z"
-                fill="#b11226"/>
-          <path d="M15.5 8 C16.3 7.5 16.6 8.2 16.7 9 L16.7 15 C16.6 15.7 15.8 16.1 14.9 16.2 L13.5 16.2 C12.7 16.2 11 15.5 11 14.2 L11 11.5 C13.5 11.5 15.2 12.2 15.5 15 L15.5 8 Z"
-                fill="#6e6e73"/>
-        </svg>
+        <img src="logo_06ed84.jpg" alt="Magaetswale Solutions logo" class="brand-img" id="brandImg" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex'">
+        <div class="brand-fallback" id="brandFallback">
+          <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px"><path d="M5 6 L5 18 L7.5 14 L10 18 L10 6 L13 6 L13 18 L16 18 L16 10 L12 10 L12 6 L16 6 L16 4 L5 4 L5 6 Z" fill="#b11226"/><path d="M15.5 8 C16.3 7.5 16.6 8.2 16.7 9 L16.7 15 C16.6 15.7 15.8 16.1 14.9 16.2 L13.5 16.2 C12.7 16.2 11 15.5 11 14.2 L11 11.5 C13.5 11.5 15.2 12.2 15.5 15 L15.5 8 Z" fill="#6e6e73"/></svg>
+        </div>
       </div>
       <div class="brand-name">Magaetswale <b>Solutions</b></div>
     </div>
@@ -407,6 +408,12 @@
     </div>
 
     <div class="map-wrap">
+      <p style="font-size:13px;color:var(--muted);margin:0 0 10px">
+        <a href="https://maps.app.goo.gl/mxaKpkWjgt6sYCWb8" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">
+          Open in Google Maps ↗
+        </a>
+        — Tshepo's Cleaning Services and Carwash, Soweto
+      </p>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.8985325999997!2d27.9618254!3d-26.2480841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950978ca92d591%3A0x9be2813144a15e64!2sTshepo%27s%20Cleaning%20Services%20and%20Carwash!5e0!3m2!1sen!2szaf!4v1757900000000"
         allowfullscreen=""
@@ -434,8 +441,8 @@
 </div>
 
 <footer>
-  <div class="slogan">Clean Spaces. Better Places. Happier Faces.</div>
-  <div>WE COME TO YOU! YOU RELAX, WE CLEAN!</div>
+  <div class="slogan">CLEAN SPACES. BETTER PLACES. HAPPIER FACES.</div>
+  <div class="tagline">WE COME TO YOU! YOU RELAX, WE CLEAN!</div>
   <div style="margin-top:6px">© <span id="year"></span> Magaetswale Solutions Pty Ltd. All rights reserved.</div>
 </footer>
 
